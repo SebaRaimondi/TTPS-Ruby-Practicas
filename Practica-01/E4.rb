@@ -10,14 +10,13 @@
 #		y si el minuto está entre 56 y 59, debe decir "casi las" (y la hora siguiente)
 
 
-def hora
-	now = Time.now
-	if (0..34) === now.hour then
-		hour = now.hour
+def en_palabras(time)
+	if (0..34) === time.hour then
+		hour = time.hour
 	else
-		hour = (now + 60*60).hour
+		hour = (time + 60*60).hour
 	end
-	min = case now.min
+	min = case time.min
 		when 0..10  then "en punto"
 		when 11..20 then "y cuarto"
 		when 21..34 then "y media"
@@ -28,4 +27,4 @@ def hora
 	return "Son las #{hour} #{min}"
 end
 
-hora
+en_palabras(Time.now)
