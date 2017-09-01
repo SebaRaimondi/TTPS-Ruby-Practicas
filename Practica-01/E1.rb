@@ -21,6 +21,7 @@ dic = Hash.new
 #	3. 	String (String)
 
 str = "Hello world"
+str = String.new			#=> ""
 
 
 #	4. 	Símbolo (Symbol)
