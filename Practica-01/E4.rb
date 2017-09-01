@@ -11,7 +11,7 @@
 
 
 def en_palabras(time)
-	if (0..34) === time.hour then
+	if (0..34) === time.min then
 		hour = time.hour
 	else
 		hour = (time + 60*60).hour
@@ -22,9 +22,9 @@ def en_palabras(time)
 		when 21..34 then "y media"
 		when 35..44 then "menos veinticinco"
 		when 45..55 then "menos cuarto"
-		when 56..59 then "casi las"
+		when 56..59 then return "Son casi las #{hour}"
 	end
-	return "Son las #{hour} #{min}"
+	str = "Son las #{hour} #{min}"
 end
 
 en_palabras(Time.now)
