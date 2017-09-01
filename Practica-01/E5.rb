@@ -7,7 +7,7 @@
 #	# => 5
 
 def contar(str1, str2)
-	str1.downcase.scan(/#{str2.downcase}/).count
+	str1.downcase.scan(str2.downcase).count
 end
 
 contar("La casa de la esquina tiene la puerta roja y la ventana blanca.", "la")
