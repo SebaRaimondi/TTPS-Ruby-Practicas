@@ -23,19 +23,15 @@
 
 #	Version 2
 
-def fib(prev1, prev2, sum, max)
+def fib prev1, prev2, sum, max
 	curr = prev1 + prev2
-	if (curr > max)
-		return sum
-	end
-	if (curr % 2 == 0)
-		sum += curr
-	end
-	return fib(prev2, curr, sum, max)
+    return sum if curr > max
+    sum += curr if curr % 2 == 0
+	fib(prev2, curr, sum, max)
 end
 
-def sumOddFib2(max = 4000000)
-	return fib(1, 1, 0, max)
+def sumOddFib2 max
+	fib(1, 1, 0, max)
 end
 
-p sumOddFib2()
+puts sumOddFib2(4_000_000)
