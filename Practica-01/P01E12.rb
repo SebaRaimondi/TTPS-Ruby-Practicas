@@ -5,11 +5,25 @@
 #	rot("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!", 13)
 #	# => "¡Ovrairavqbf n yn phefnqn 2015 qr GGCF Bcpvóa Ehol!"
 
-def rot(str, i = 1)
-	i.times { str.gsub!(/[A-Za-z]/) { |c| c.succ } }
-	return str
-end
+#	def rot(str, i = 1)
+#		i.times { str.gsub!(/[A-Za-z]/) { |c| c.succ } }
+#	return str
+#	end
 
-rot("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!", 13)
+#	rot("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!", 13)
 
 #	Preguntar, mismo problema que E11
+
+def nextChar(n, char)
+	if n > 0
+		return nextChar(n-1, char.succ)
+	else
+		return char
+	end
+end
+
+def rot(str, i = 1)
+	str.gsub(/[A-Za-z]/) { |c| nextChar(i, c) }
+end
+
+p rot13("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!")
