@@ -16,14 +16,14 @@
 
 def nextChar(n, char)
 	if n > 0
-		return nextChar(n-1, char.succ)
+		return nextChar(n-1, char.next)
 	else
 		return char
 	end
 end
 
 def rot(str, i = 1)
-	str.gsub(/[A-Za-z]/) { |c| nextChar(i, c) }
+	str.gsub(/[A-Za-z]/) { |c| nextChar(i, c)[-1] }
 end
 
-p rot13("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!")
+p rot("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!", 13)
