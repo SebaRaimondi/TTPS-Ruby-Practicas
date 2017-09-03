@@ -25,8 +25,8 @@
 
 def fib prev1, prev2, sum, max
 	curr = prev1 + prev2
-    return sum if curr > max
-    sum += curr if curr % 2 == 0
+	return sum if curr > max
+	sum += curr if curr % 2 == 0
 	fib(prev2, curr, sum, max)
 end
 
