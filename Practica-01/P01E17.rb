@@ -3,21 +3,39 @@
 #	términos en la secuencia de Fibonacci cuyos valores no exceden los 4 millones,
 #	encontrá la suma de los términos pares.
 
+#	def sumOddFib(max = 4000000)
+#		pre = [1]		# Array, contains the 2 previous terms.
+#		count = 1		# Int, counts terms processed.
+#		cur = 1			# Has current term.
+#		sum = 0			
+#		while (1..max).include?(cur)
+#			pre[count % 2] = cur
+#			if (cur % 2 == 0)
+#				sum += cur
+#			end
+#			cur = pre.sum
+#			count += 1
+#		end
+#		return sum
+#	end
 
-def sumOddFib(max = 4000000)
-	pre = [1]		# Array, contains the 2 previous terms.
-	count = 1		# Int, counts terms processed.
-	cur = 1			# Has current term.
-	sum = 0			
-	while (1..max).include?(cur)
-		pre[count % 2] = cur
-		if (cur % 2 == 0)
-			sum += cur
-		end
-		cur = pre.sum
-		count += 1
+#	p sumOddFib(4000000)
+
+#	Version 2
+
+def fib(prev1, prev2, sum, max)
+	curr = prev1 + prev2
+	if (curr > max)
+		return sum
 	end
-	return sum
+	if (curr % 2 == 0)
+		sum += curr
+	end
+	return fib(prev2, curr, sum, max)
 end
 
-p sumOddFib(4000000)
+def sumOddFib2(max = 4000000)
+	return fib(1, 1, 0, max)
+end
+
+p sumOddFib2()
