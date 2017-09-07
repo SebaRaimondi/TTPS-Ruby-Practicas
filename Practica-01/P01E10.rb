@@ -5,9 +5,7 @@
 #	# => "<ul><li>perros: 1</li><li>gatos: 1</li><li>peces: 0</li></ul>"
 
 def a_ul(hash)
-	hash.reduce("<ul>") do |str, (sym, val)|
-		str << "<li>#{sym.to_s}: #{val}</li>"
-	end << "</ul>"
+	hash.reduce("<ul>") { |str, (sym, val)| str << "<li>#{sym.to_s}: #{val}</li>" } << "</ul>"
 end
 
 p a_ul({perros: 1, gatos: 1, peces: 0})
