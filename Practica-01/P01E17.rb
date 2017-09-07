@@ -30,8 +30,8 @@ def fib(prev1, prev2, sum, max)
 	fib(prev2, curr, sum, max)
 end
 
-def sumFairFib2(max)
+def fibSetup(max)
 	fib(1, 1, 0, max)
 end
 
-p sumFairFib2(4_000_000)
+p fibSetup(4_000_000)
