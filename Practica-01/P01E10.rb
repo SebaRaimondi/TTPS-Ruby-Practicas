@@ -10,4 +10,4 @@ def a_ul(hash)
 	end << "</ul>"
 end
 
-a_ul({perros: 1, gatos: 1, peces: 0})
+p a_ul({perros: 1, gatos: 1, peces: 0})

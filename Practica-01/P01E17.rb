@@ -34,4 +34,4 @@ def sumOddFib2(max)
 	fib(1, 1, 0, max)
 end
 
-puts sumOddFib2(4_000_000)
+p sumOddFib2(4_000_000)

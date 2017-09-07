@@ -9,4 +9,4 @@ def longitud(array)
 	array.map { |p| p.size }
 end
 
-longitud(['TTPS', 'Opción', 'Ruby', 'Cursada 2015'])
+p longitud(['TTPS', 'Opción', 'Ruby', 'Cursada 2015'])
