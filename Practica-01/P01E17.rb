@@ -23,15 +23,29 @@
 
 #	Version 2
 
-def fib(prev1, prev2, sum, max)
-	curr = prev1 + prev2
-	return sum if curr > max
-	sum += curr if curr % 2 == 0
-	fib(prev2, curr, sum, max)
-end
+#	def fib(prev1, prev2, sum, max)
+#		curr = prev1 + prev2
+#		return sum if curr > max
+#		sum += curr if curr % 2 == 0
+#		fib(prev2, curr, sum, max)
+#	end
 
-def sumFairFib2(max)
-	fib(1, 1, 0, max)
+#	def sumFairFib2(max)
+#		fib(1, 1, 0, max)
+#	end
+
+def fibSetup(max)
+	def fibonacci
+		Enumerator.new do |y|
+		a = b = 1
+	
+			loop do
+				y << a
+				a, b = b, a + b
+			end
+		end
+	end
+	fibonacci.lazy.select(&:even?).take_while { |val| val < max }.sum
 end
 
 p sumFairFib2(4_000_000)
