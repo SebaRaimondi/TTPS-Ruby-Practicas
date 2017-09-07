@@ -11,4 +11,4 @@ def reemplazar(str)
 	str.gsub(/[{}]/, '{' => 'do\n', '}' => '\nend')
 end
 
-reemplazar("3.times { |i| puts i }")
+p reemplazar("3.times { |i| puts i }")
