@@ -48,4 +48,4 @@ def fibSetup(max)
 	fibonacci.lazy.select(&:even?).take_while { |val| val < max }.sum
 end
 
-p sumFairFib2(4_000_000)
+p fibSetup(4_000_000)
