@@ -15,11 +15,7 @@
 #	Preguntar, mismo problema que E11
 
 def nextChar(n, char)
-	if n > 0
-		return nextChar(n-1, char.next)
-	else
-		return char
-	end
+	n > 0 ? nextChar((n - 1), char.next) : char
 end
 
 def rot(str, i = 1)
