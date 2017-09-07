@@ -13,8 +13,8 @@ arreglo = Array.new    		#=> []
 
 #	2.	Diccionario o hash (Hash)
 
-dic = { "index_1" => 1, "index_2" => 2 }
-dic = { index_1: 1, index_2: 2 }
+dic = {"index_1" => 1, "index_2" => 2}
+dic = {index_1: 1, index_2: 2}
 dic = Hash.new
 
 

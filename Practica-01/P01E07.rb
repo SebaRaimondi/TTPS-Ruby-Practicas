@@ -25,4 +25,4 @@ str.bytes
 
 #		4. Cambiá las vocales por números (a por 4, e por 3, i por 1, o por 0, u por 6).
 
-str.gsub( /[aeiou]/, 'a' => 4, 'e' => 3, 'i' => 1, 'o' => 0, 'u' => 6 )
+str.gsub(/[aeiou]/, 'a' => 4, 'e' => 3, 'i' => 1, 'o' => 0, 'u' => 6)
