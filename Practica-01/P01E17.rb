@@ -35,7 +35,7 @@
 #	end
 
 def fibSetup(max)
-  def fibonacci
+  fib =
     Enumerator.new do |y|
       a = b = 1
 
@@ -44,8 +44,7 @@ def fibSetup(max)
         a, b = b, a + b
       end
     end
-  end
-  fibonacci.lazy.select(&:even?).take_while { |val| val < max }.sum
+  fib.lazy.select(&:even?).take_while { |val| val < max }.sum
 end
 
 p fibSetup(4_000_000)

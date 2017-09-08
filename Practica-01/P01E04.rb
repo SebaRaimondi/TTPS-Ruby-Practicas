@@ -20,7 +20,7 @@ def en_palabras(time)
     when 45..55 then 'menos cuarto'
     when 56..59 then return "Son casi las #{hour}"
     end
-  str = "Son las #{hour} #{min}"
+  return "Son las #{hour} #{min}"
 end
 
 p en_palabras(Time.now)
