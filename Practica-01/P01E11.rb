@@ -17,11 +17,11 @@
 #	Version 2
 
 def nextChar(n, char)
-	n > 0 ? nextChar((n - 1), char.next) : char
+  n > 0 ? nextChar((n - 1), char.next) : char
 end
 
 def rot13(str)
-	str.gsub(/[A-Za-z]/) { |c| nextChar(13, c)[-1] }
+  str.gsub(/[A-Za-z]/) { |c| nextChar(13, c)[-1] }
 end
 
 p rot13("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!")

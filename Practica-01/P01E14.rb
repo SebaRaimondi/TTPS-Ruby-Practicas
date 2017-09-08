@@ -10,10 +10,10 @@
 
 
 def notacion_hexadecimal(arr)
-	arr.inject('#') { |sum, value| sum << value.to_s(16).rjust(2, '0').upcase }
+  arr.inject('#') { |sum, value| sum << value.to_s(16).rjust(2, '0').upcase }
 end
 def notacion_entera(arr)
-	arr.each.with_index.inject(0) { |sum, (value, index)|  sum + value * (256**index) }	
+  arr.each.with_index.inject(0) { |sum, (value, index)|  sum + value * (256**index) }	
 end
 
 

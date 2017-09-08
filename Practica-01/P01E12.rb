@@ -15,11 +15,11 @@
 #	Preguntar, mismo problema que E11
 
 def nextChar(n, char)
-	n > 0 ? nextChar((n - 1), char.next) : char
+  n > 0 ? nextChar((n - 1), char.next) : char
 end
 
 def rot(str, i = 1)
-	str.gsub(/[A-Za-z]/) { |c| nextChar(i, c)[-1] }
+  str.gsub(/[A-Za-z]/) { |c| nextChar(i, c)[-1] }
 end
 
 p rot("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!", 13)

@@ -35,17 +35,17 @@
 #	end
 
 def fibSetup(max)
-	def fibonacci
-		Enumerator.new do |y|
-		a = b = 1
-	
-			loop do
-				y << a
-				a, b = b, a + b
-			end
-		end
-	end
-	fibonacci.lazy.select(&:even?).take_while { |val| val < max }.sum
+  def fibonacci
+    Enumerator.new do |y|
+    a = b = 1
+  
+      loop do
+        y << a
+        a, b = b, a + b
+      end
+    end
+  end
+  fibonacci.lazy.select(&:even?).take_while { |val| val < max }.sum
 end
 
 p fibSetup(4_000_000)

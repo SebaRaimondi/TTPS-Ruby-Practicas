@@ -1,7 +1,7 @@
 #	8. ¿Qué hace el siguiente código?
 
 [:upcase, :downcase, :capitalize, :swapcase].map do |meth|
-	"TTPS Ruby".send(meth)
+  "TTPS Ruby".send(meth)
 end
 
 # 	Le envia un arreglo de 4 simbolos que coinciden con 4 mensajes que 
