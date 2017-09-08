@@ -7,7 +7,7 @@
 #		pre = [1]		# Array, contains the 2 previous terms.
 #		count = 1		# Int, counts terms processed.
 #		cur = 1			# Has current term.
-#		sum = 0			
+#		sum = 0
 #		while (1..max).include?(cur)
 #			pre[count % 2] = cur
 #			if (cur % 2 == 0)
@@ -37,8 +37,8 @@
 def fibSetup(max)
   def fibonacci
     Enumerator.new do |y|
-    a = b = 1
-  
+      a = b = 1
+
       loop do
         y << a
         a, b = b, a + b

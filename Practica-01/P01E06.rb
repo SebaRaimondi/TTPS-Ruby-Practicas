@@ -6,7 +6,7 @@
 #	# => 4
 
 def contar(str1, str2)
-  str1.downcase.scan(str2.downcase).split.count { |x| x == "la" }
+  str1.downcase.scan(str2.downcase).split.count { |x| x == 'la' }
 end
 
-p contar("La casa de la esquina tiene la puerta roja y la ventana blanca.", "la")
+p contar('La casa de la esquina tiene la puerta roja y la ventana blanca.', 'la')

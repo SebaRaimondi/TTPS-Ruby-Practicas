@@ -5,23 +5,19 @@
 #		3. Convertí cada uno de sus caracteres por su correspondiente valor ASCII.
 #		4. Cambiá las vocales por números (a por 4, e por 3, i por 1, o por 0, u por 6).
 
-str = "Una cadena cualquiera"
-
+str = 'Una cadena cualquiera'
 
 #		1. Imprimilo con sus caracteres en orden inverso.
 
 p str.swapcase
 
-
 #		2. Eliminá los espacios en blanco que contenga.
 
-p str.delete(" ")
-
+p str.delete(' ')
 
 #		3. Convertí cada uno de sus caracteres por su correspondiente valor ASCII.
 
 p str.bytes
-
 
 #		4. Cambiá las vocales por números (a por 4, e por 3, i por 1, o por 0, u por 6).
 

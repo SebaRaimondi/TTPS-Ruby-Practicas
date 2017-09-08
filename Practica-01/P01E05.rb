@@ -10,4 +10,4 @@ def contar(str1, str2)
   str1.downcase.scan(str2.downcase).count
 end
 
-p contar("La casa de la esquina tiene la puerta roja y la ventana blanca.", "la")
+p contar('La casa de la esquina tiene la puerta roja y la ventana blanca.', 'la')

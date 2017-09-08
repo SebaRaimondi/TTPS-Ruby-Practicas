@@ -4,7 +4,6 @@
 #		3. Conocer las variables de instancia de una clase.
 #		4. Obtener la lista de ancestros (superclases) de una clase.
 
-
 #	1. Object define el metodo "methods", que devuelve los metodos public y protected de un objeto,
 #		incluyendo los metodos de sus ancestros.
 

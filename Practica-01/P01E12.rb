@@ -22,4 +22,4 @@ def rot(str, i = 1)
   str.gsub(/[A-Za-z]/) { |c| nextChar(i, c)[-1] }
 end
 
-p rot("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!", 13)
+p rot('¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!', 13)

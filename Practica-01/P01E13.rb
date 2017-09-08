@@ -6,6 +6,6 @@
 #	Matz
 #	¡Hola, Matz!
 
-puts "Por favor, ingresa tu nombre:"
+puts 'Por favor, ingresa tu nombre:'
 name = gets.chomp
 puts "Hola, #{name}!"

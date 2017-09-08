@@ -11,7 +11,6 @@
 
 #	print rot13("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!")
 
-
 #	=> "¡Ovraaiiraavqbbff n yn phheeffnqn 2015 qr GGGGCCFF BBccpvóaa EEhholl!"
 
 #	Version 2
@@ -24,4 +23,4 @@ def rot13(str)
   str.gsub(/[A-Za-z]/) { |c| nextChar(13, c)[-1] }
 end
 
-p rot13("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!")
+p rot13('¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!')
