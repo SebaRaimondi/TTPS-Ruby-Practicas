@@ -9,14 +9,13 @@ end
 # Si no se recibe la cantidad de casilleros, aprovecho el valor por defecto para ese parámetro para evitar tener que
 # llamar a #tirar_dado dentro del cuerpo del método.
 def mover_ficha (fichas, jugador, casilleros = tirar_dado)
-	fichas[jugador.to_sym] += casilleros
-	if fichas[jugador.to_sym] > 40
+	fichas[jugador] += casilleros
+	if fichas[jugador] > 40
 		puts "Ganó #{jugador}!!"
 		true
 	else
-		puts "#{jugador} ahora está en el casillero #{fichas[jugador.to_sym]}"
-		fichas[jugador.to_sym]
-		false
+		puts "#{jugador} ahora está en el casillero #{fichas[jugador]}"
+		fichas[jugador]
 	end
 end
 
@@ -27,7 +26,6 @@ until finalizado
 		finalizado = mover_ficha(posiciones, jugador)
 	end
 end
-
 
 # fichas[jugador] no existe, funcionaria si se accediera con jugador.to_sym
 # La ejecucion se frena porque cuando no termina devuelve la posicion en la que quedo el jugador, en vez de false.
