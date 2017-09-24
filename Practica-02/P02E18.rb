@@ -14,4 +14,4 @@ def prueba(*args)
 		return :ok
 end
 
-p prueba("a", "b", "c", ->(x) { x.to_s.upcase })
+p prueba("a", "b", "c") { x.to_s.upcase }
