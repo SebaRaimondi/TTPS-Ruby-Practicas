@@ -1,5 +1,6 @@
-def prueba(*args, block)
-	block.yield args
+def prueba(*args)
+	begin
+		yield args
 	rescue RuntimeError => a
 		puts "Algo salio mal"
 		return :rt
@@ -9,7 +10,8 @@ def prueba(*args, block)
 	rescue => e
 		puts "No se que hacer!"
 		raise e
-
+	else
+		return :ok
 end
 
 p prueba("a", "b", "c", ->(x) { x.to_s.upcase })
