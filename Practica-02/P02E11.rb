@@ -1,9 +1,4 @@
 module Countable
-    def initialize
-        # Creo un hash en el que cada posicion nueva se inicializa en 0.
-        @invocations = Hash.new(0)
-    end
-
     module ClassMethods
         # Los siguientes metodos se incluiran como metodos de clase.
         def count_invocations_of(sym)
@@ -29,6 +24,10 @@ module Countable
         # Extiendo la clase con los metodos del modulo ClassMethods.
         # Los metodos definidos en ClassMethods seran metodos de clase en la clase que lo incluye.
         base.extend(ClassMethods)
+
+        # Creo un hash en el que cada posicion nueva se inicializa en 0.
+        # Le digo a la clase que incluye el modulo que lo agregue como variable de instancia
+        base.instance_variable_set :@invocations, Hash.new(0)
     end
 
     # Devuelve true si fue llamado.
