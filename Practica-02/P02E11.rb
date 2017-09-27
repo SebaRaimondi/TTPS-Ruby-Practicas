@@ -1,4 +1,11 @@
 module Countable
+    # Para no tener que sobreescribir initialize
+    def invocations
+        # ||= devuelve invocations o le asigna y devuelve Hash.new(0)
+        # La primera vez devuelve y asigna Hash.new(0), todas las siguientes veces devuelve la var
+        @invocations ||= Hash.new(0)
+    end
+
     module ClassMethods
         # Los siguientes metodos se incluiran como metodos de clase.
         def count_invocations_of(sym)
@@ -11,7 +18,7 @@ module Countable
             define_method "#{sym}" do
                 # Aumento la cantidad de veces que se llamo el metodo.
                 # __method__ contiene el nombre del metodo en el que se ejecuta.
-                @invocations[__method__] += 1
+                invocations[__method__] += 1
                 
                 # Ejecuto la funcionalidad original del metodo.
                 send(:"o_#{__method__}")
@@ -24,20 +31,16 @@ module Countable
         # Extiendo la clase con los metodos del modulo ClassMethods.
         # Los metodos definidos en ClassMethods seran metodos de clase en la clase que lo incluye.
         base.extend(ClassMethods)
-
-        # Creo un hash en el que cada posicion nueva se inicializa en 0.
-        # Le digo a la clase que incluye el modulo que lo agregue como variable de instancia
-        base.instance_variable_set :@invocations, Hash.new(0)
     end
 
     # Devuelve true si fue llamado.
     def invoked?(sym)
-        @invocations[sym] > 0
+        invocations[sym] > 0
     end
 
     # Devuelve la cantidad de veces que el metodo fue llamado.
     def invoked(sym)
-        @invocations[sym]
+        invocations[sym]
     end
 end
 
