@@ -4,8 +4,8 @@ module Opposite
 	end
 end
 
-true.extend Opposite
-false.extend Opposite
+true.class.extend Opposite
+false.class.extend Opposite
 
 p "true.opposite --> #{true.opposite}"
 p "false.opposite --> #{false.opposite}"

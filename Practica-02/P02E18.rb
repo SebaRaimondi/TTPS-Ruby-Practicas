@@ -1,15 +1,15 @@
 def prueba(*args)
 	begin
 		yield args
-	rescue RuntimeError => a
+	rescue RuntimeError
 		puts "Algo salio mal"
 		return :rt
 	rescue NoMethodError => b
 		puts "No encontre un metodo: " << b.message
 		return :nm
-	rescue => e
+	rescue
 		puts "No se que hacer!"
-		raise e
+		raise
 	else
 		return :ok
 end

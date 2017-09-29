@@ -2,9 +2,9 @@
 # ¿Cómo podrías invocar el método? Por ejemplo, teniendo la siguiente variable con los números a ordenar:
 
 def ordenar(*params)
-	params.flatten.sort
+	params.sort
 end
 
 entrada = [10, 9, 1, 2, 3, 5, 7, 8]
-p ordenar(entrada)
+p ordenar(*entrada)
 # Dada `entrada', invocar a #ordenar utilizando sus valores para ordenarlos
